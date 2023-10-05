@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Psicólogos - Helferkatze</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .search-bar {
+            text-align: center;
+            padding: 10px;
+            background-color: #000000;
+        }
+        .search-input {
+            width: 70%;
+            padding: 5px;
+        }
+        .psicologo {
+            background-color: #ffffff;
+            border: 1px solid #d4c7c7;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .psicologo h3 {
+            color: #000000;
+        }
+        .psicologo p {
+            margin: 5px 0;
+        }
+        .psicologo a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #000000;
+            text-decoration: none;
+        }
+        .chat-box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Psicólogos</h1>
+    <!-- Barra de pesquisa -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Digite a cidade e estado">
+        <button onclick="search()">Procurar</button>
+    </div>
+    <div class="lista-psicologos">
+        <!-- Lista de Psicólogos -->
+        <div class="psicologo" data-cidade="São Paulo" data-estado="SP">
+            <h3>Dr. Ana Silva</h3>
+            <p>Idade: 42 anos</p>
+            <p>Localização: São Paulo, SP</p>
+            <p>Telefone: (11) 555-1234</p>
+            <p>Email: ana.silva@example.com</p>
+            <a href="https://maps.google.com/?q=São+Paulo,SP" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('ana_silva')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="ana_silva_chat" class="chat-box">
+                <input type="text" id="ana_silva_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('ana_silva')">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Informações do Psicólogo 2 -->
+        <div class="psicologo" data-cidade="Rio de Janeiro" data-estado="RJ">
+            <h3>Dr. Carlos Santos</h3>
+            <p>Idade: 38 anos</p>
+            <p>Localização: Rio de Janeiro, RJ</p>
+            <p>Telefone: (21) 555-5678</p>
+            <p>Email: carlos.santos@example.com</p>
+            <a href="https://maps.google.com/?q=Rio+de+Janeiro,RJ" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('carlos_santos')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="carlos_santos_chat" class="chat-box">
+                <input type="text" id="carlos_santos_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('carlos_santos')">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Informações do Psicólogo 3 -->
+        <div class="psicologo" data-cidade="Belo Horizonte" data-estado="MG">
+            <h3>Dra. Maria Ferreira</h3>
+            <p>Idade: 35 anos</p>
+            <p>Localização: Belo Horizonte, MG</p>
+            <p>Telefone: (31) 555-9876</p>
+            <p>Email: maria.ferreira@example.com</p>
+            <a href="https://maps.google.com/?q=Belo+Horizonte,MG" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('maria_ferreira')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="maria_ferreira_chat" class="chat-box">
+                <input type="text" id="maria_ferreira_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('maria_ferreira')">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Informações do Psicólogo 4 -->
+        <div class="psicologo" data-cidade="Salvador" data-estado="BA">
+            <h3>Dr. Pedro Lima</h3>
+            <p>Idade: 45 anos</p>
+            <p>Localização: Salvador, BA</p>
+            <p>Telefone: (71) 555-5432</p>
+            <p>Email: pedro.lima@example.com</p>
+            <a href="https://maps.google.com/?q=Salvador,BA" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('pedro_lima')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="pedro_lima_chat" class="chat-box">
+                <input type="text" id="pedro_lima_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('pedro_lima')">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Informações do Psicólogo 5 -->
+        <div class="psicologo" data-cidade="Brasília" data-estado="DF">
+            <h3>Dra. Laura Pereira</h3>
+            <p>Idade: 40 anos</p>
+            <p>Localização: Brasília, DF</p>
+            <p>Telefone: (61) 555-8765</p>
+            <p>Email: laura.pereira@example.com</p>
+            <a href="https://maps.google.com/?q=Brasília,DF" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('laura_pereira')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="laura_pereira_chat" class="chat-box">
+                <input type="text" id="laura_pereira_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('laura_pereira')">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Informações do Psicólogo 6 -->
+        <div class="psicologo" data-cidade="Curitiba" data-estado="PR">
+            <h3>Dr. André Oliveira</h3>
+            <p>Idade: 37 anos</p>
+            <p>Localização: Curitiba, PR</p>
+            <p>Telefone: (41) 555-2345</p>
+            <p>Email: andre.oliveira@example.com</p>
+            <a href="https://maps.google.com/?q=Curitiba,PR" target="_blank">Localização GPS</a>
+            <a href="javascript:void(0);" onclick="toggleChat('andre_oliveira')">Iniciar Chat</a>
+            <!-- Campo de Chat -->
+            <div id="andre_oliveira_chat" class="chat-box">
+                <input type="text" id="andre_oliveira_message" placeholder="Digite sua mensagem">
+                <button onclick="sendMessage('andre_oliveira')">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            const searchTerm = document.querySelector(".search-input").value.toLowerCase();
+            const psicologos = document.querySelectorAll(".psicologo");
+            
+            psicologos.forEach((psicologo) => {
+                const cidade = psicologo.getAttribute("data-cidade").toLowerCase();
+                const estado = psicologo.getAttribute("data-estado").toLowerCase();
+                
+                if (cidade.includes(searchTerm) || estado.includes(searchTerm)) {
+                    psicologo.style.display = "block";
+                } else {
+                    psicologo.style.display = "none";
+                }
+            });
+        }
+
+        function toggleChat(psicologo) {
+            const chatBox = document.getElementById(psicologo + "_chat");
+            chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+        }
+
+        function sendMessage(psicologo) {
+            const messageInput = document.getElementById(psicologo + "_message").value;
+            // Aqui você pode adicionar lógica para enviar a mensagem para o psicólogo.
+            // Por exemplo, você pode exibir a mensagem em um console.
+            console.log("Mensagem para " + psicologo + ": " + messageInput);
+        }
+    </script>
+</body>
+</html>

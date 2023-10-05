@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Helferkatze</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d6c5c5;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        img.logo {
+            width: 100px;
+            height: auto;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://mail.google.com/mail/u/0/?ui=2&ik=8ef3de1ef7&attid=0.2&permmsgid=msg-f:1775057495747627917&th=18a2456341ee8b8d&view=fimg&disp=thd&attbid=ANGjdJ8OqVExrbPL9QxXqJjF88VmMz1jnkytAKC823YZ24v9hrBj8gwOwa18gMrsFmpJfbH02ul-fYRJoZeNATKttSe6f8ik7-vpCjyVmVk-N02beNLrfNgIXKTkuaE&ats=2524608000000&sz=w1360-h651" alt="Logo Helferkatze">
+        <h1>Cadastro</h1>
+        <form>
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="senha" placeholder="Senha">
+            <button type="button" onclick="redirecionarParaListaPsicologos()">Cadastrar</button>
+        </form>
+        <p><a href="#">Já tem uma conta? Faça login aqui</a></p>
+    </div>
+
+    <script>
+        // Função para redirecionar após o cadastro
+        function redirecionarParaListaPsicologos() {
+            window.location.href = 'contato.html';
+        }
+    </script>
+</body>
+</html>
